@@ -32,7 +32,6 @@ public class AmazonDropdown {
             System.out.println(dropdownvalue);
         }
     }
-
     @And("select {string} option")
     public void selectOption(String option) {
         Select select = new Select(element);
@@ -46,3 +45,4 @@ public class AmazonDropdown {
         driver.findElement(By.linkText("Sign in")).click();
     }
 }
+//OK
