@@ -11,20 +11,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import utility.BrowserBase;
 
 import javax.swing.*;
 
 public class AmazonDropdown {
-    WebDriver driver;
+
     WebElement element;
-    @Given("go to the dropdown page")
-    public void DropdwonPage(){
-        driver = new ChromeDriver();
-        driver.get("https://www.amazon.in/");
+    BrowserBase BrowserBase;
+    WebDriver driver;
+
+    public AmazonDropdown(){
+        BrowserBase = new BrowserBase();
     }
 
     @When("get the all dropdown values")
     public void getTheAllDropdownValues() {
+        driver = BrowserBase.getDriver();
         element = driver.findElement(By.id("searchDropdownBox"));
         int dropdownsize = element.findElements(By.tagName("option")).size();
         for (int i=0; i<dropdownsize; i++){
@@ -45,4 +48,3 @@ public class AmazonDropdown {
         driver.findElement(By.linkText("Sign in")).click();
     }
 }
-//OK

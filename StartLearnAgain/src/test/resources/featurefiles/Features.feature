@@ -12,7 +12,6 @@ Feature: Verify the OrangeHRM website
 
   @AmazonDropdown
   Scenario Outline: Validate the Dropdown values
-    Given go to the dropdown page
     When get the all dropdown values
     And select "<category>" option
     Then click signin button
