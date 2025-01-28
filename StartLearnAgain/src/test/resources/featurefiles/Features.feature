@@ -13,8 +13,8 @@ Feature: Verify the OrangeHRM website
   @AmazonDropdown
   Scenario Outline: Validate the Dropdown values
     When get the all dropdown values
-    And select "<category>" option
+    And select "<productName>" option
     Then click signin button
     Examples:
-      | category |  |
+      | productName |  |
       | Baby     |  |
